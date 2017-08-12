@@ -59,4 +59,8 @@ public class Window {
 
 
     }
+
+    public long getWindowHandle(){
+        return windowHandle;
+    }
 }

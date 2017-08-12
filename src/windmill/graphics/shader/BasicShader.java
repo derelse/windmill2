@@ -1,6 +1,7 @@
 package windmill.graphics.shader;
 
 import windmill.math.Matrix4f;
+import windmill.math.Vector3f;
 
 /**
  * Created by ElsE on 11.08.2017.
@@ -19,6 +20,8 @@ public class BasicShader extends Shader {
 
         addUniform("projectionMatrix");
         addUniform("worldMatrix");
+        addUniform("viewMatrix");
+        addUniform("sun");
 
     }
 
@@ -29,6 +32,15 @@ public class BasicShader extends Shader {
 
     public void updateProjectionMatrix(Matrix4f projectionMatrix){
         setUniform("projectionMatrix", projectionMatrix);
+    }
+
+    public void updateSun(Vector3f sun){
+        setUniform("sun", sun);
+    }
+
+    public void updateViewMatrix(Matrix4f viewMatrix){
+        setUniform("viewMatrix", viewMatrix);
+
     }
 
     public void updateWorldMatrix(Matrix4f worldMatrix){

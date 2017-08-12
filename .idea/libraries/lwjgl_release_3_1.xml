@@ -2,6 +2,7 @@
   <library name="lwjgl-release-3.1">
     <CLASSES>
       <root url="file://D:/cg/lwjgl-release-3.1.2-custom" />
+      <root url="jar://D:/cg/PNGDecoder.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

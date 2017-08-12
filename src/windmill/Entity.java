@@ -1,4 +1,4 @@
-package windmill.entity;
+package windmill;
 
 import windmill.graphics.model.Model;
 import windmill.math.Vector3f;
@@ -8,14 +8,17 @@ import windmill.math.Vector3f;
  */
 public class Entity {
 
-    private Model model;
+    //this class represents Items in the view
 
+    private Model model;
+    private String name;
     private Vector3f pos;
 
 
-    public Entity(Vector3f pos, Model model){
+    public Entity(Vector3f pos, Model model, String name){
         this.pos= pos;
         this.model=model;
+        this.name = name;
     }
 
     public Model getModel() {
@@ -32,5 +35,9 @@ public class Entity {
 
     public void setPos(Vector3f pos) {
         this.pos = pos;
+    }
+
+    public String getName() {
+        return name;
     }
 }

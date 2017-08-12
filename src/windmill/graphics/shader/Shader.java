@@ -18,6 +18,8 @@ import static org.lwjgl.opengl.GL20.*;
  */
 public abstract class Shader {
 
+    //this class manages the shaders
+
     private HashMap<String, Integer> uniforms;
 
     private int program;

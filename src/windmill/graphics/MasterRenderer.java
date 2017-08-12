@@ -1,11 +1,13 @@
 package windmill.graphics;
 
-import windmill.entity.Entity;
+import windmill.Camera;
+import windmill.Entity;
 import windmill.graphics.model.Model;
 import windmill.graphics.shader.BasicShader;
 import windmill.graphics.shader.Shader;
 import windmill.math.Matrix4f;
 import windmill.math.Transform;
+import windmill.math.Vector3f;
 
 
 import java.util.ArrayList;
@@ -19,6 +21,8 @@ import static org.lwjgl.opengl.GL11.*;
 
 
 public class MasterRenderer {
+
+    //this class does the main render stuff
 
     private BasicShader basicShader;
 
@@ -38,9 +42,15 @@ public class MasterRenderer {
 
     }
 
-    public void render(){
+    public void render(Camera camera, Vector3f sun){
+
+        Matrix4f viewMatrix = Transform.getViewMatrix(camera);
+
         prepare();
+
         basicShader.bind();
+        basicShader.updateViewMatrix(viewMatrix);
+        basicShader.updateSun(sun);
         entityRenderer.render(entities);
 
 
